@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>時間表示</title>
+    <script>
+        function clock() {
+            const t = new Date().toLocaleTimeString([], { hour12: false})
+            document.getElementById('out1').textContent = t;            
+        }
+        function milliclock() {
+            // 現在日時を取得
+            const currentDate = new Date();
+
+            // 年からミリ秒までを取得
+            const year = currentDate.getFullYear();
+            const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 月は0から11で表されるため+1する
+            const day = currentDate.getDate().toString().padStart(2, '0');
+            const hours = currentDate.getHours().toString().padStart(2, '0');
+            const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+            const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+            const milliseconds = currentDate.getMilliseconds().toString().padStart(3, '0');
+
+            document.getElementById('out2').textContent = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}.${milliseconds}`
+
+        }
+        setInterval(clock, 1000);
+        setInterval(milliclock, 10);
+        milliclock()
+        window.addEventListener('DOMContentLoaded', clock);
+    </script>
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+
+    <h1>時間表示</h1>
+
+    <p>Now Time : <span id="out1"></span></p>
+    <p>ミリ秒まで表示<br><span id="out2"></span></p>
+
+
+</body>
+</html>
