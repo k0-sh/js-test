@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ミリ秒までの時計</title>
+  <style>
+    body {
+      text-align: center;
+      margin: 50px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+
+    <p>chatgptに書いてもらったやつ</p>
+  <span id="clock"></span>
+
+  <script>
+    function updateClock() {
+      // 現在の日時を取得
+      const currentDate = new Date();
+
+      // 年、月、日、時、分、秒、ミリ秒を取得
+      const year = currentDate.getFullYear();
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 月は0から11で表されるため+1する
+      const day = currentDate.getDate().toString().padStart(2, '0');
+      const hours = currentDate.getHours().toString().padStart(2, '0');
+      const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+      const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+      const milliseconds = currentDate.getMilliseconds().toString().padStart(3, '0');
+
+      // 時計の表示を更新
+      document.getElementById('clock').textContent = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+    }
+
+    // 10ミリ秒ごとにupdateClock関数を呼び出す
+    setInterval(updateClock, 10);
+
+    // 初回の呼び出し
+    updateClock();
+  </script>
+</body>
+</html>
