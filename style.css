@@ -5,3 +5,6 @@ body {
 h1 {
     color: black;
 }
+
+#breadcrumbs { font-size: 90%;}
+#breadcrumbs + h1 { margin-top: 0;}

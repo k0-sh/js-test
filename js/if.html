@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+
+    <h1>if文とか</h1>
+
+    <p onmouseover="this.textContent='ありがとう!'"
+        onmouseout="this.textContent='クリックしてね。'">クリックしてね。</p>
+
+    <p id="out1"></p>
+
+    <script>
+        let s1 = "";
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                s1 += i + 'は偶数<br>';
+            } else {
+                s1 += i + 'は奇数<br>';
+            }
+        }
+        document.getElementById("out1").innerHTML = s1;
+    </script>
+</body>
+</html>
