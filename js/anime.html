@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        #mona {
+            position: relative;
+            left: 0px;
+        }
+    </style>
+
+    <script>
+        let duke, x, timer;
+        function move() {
+            x += 10;
+            duke.style.left = x +'px';
+            if (x > 500) clearInterval(timer);
+        }
+        window.onload = function () {
+            x = 0;
+            duke = document.getElementById('duke');
+            timer = setInterval(move, 100) // 100msごとにmove()を呼び出し
+        }
+    </script>
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+
+    <h1>アニメーション</h1>
+    
+    <img id="mona" src="bicycle.png" alt="mona">
+</body>
+</html>
