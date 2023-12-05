@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,20 @@
     <style>
         #mona {
             position: relative;
-            left: 0px;
+            left: 0px;clearInterval
         }
     </style>
 
     <script>
-        let duke, x, timer;
+        let mona, x, timer;
         function move() {
             x += 10;
-            duke.style.left = x +'px';
+            mona.style.left = x +'px';
             if (x > 500) clearInterval(timer);
         }
         window.onload = function () {
             x = 0;
-            duke = document.getElementById('duke');
+            mona = document.getElementById('mona');
             timer = setInterval(move, 100) // 100msごとにmove()を呼び出し
         }
     </script>
@@ -32,7 +32,7 @@
     </nav>
 
     <h1>アニメーション</h1>
-    
+
     <img id="mona" src="bicycle.png" alt="mona">
 </body>
 </html>
