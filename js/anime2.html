@@ -17,10 +17,8 @@
         // monaの画像 190x144
         let mona, x, y, dx, dy, timer;
         function move() {
-            if (x < 0 || x > innerWidth - 10 - 190) 
-                dx = -dx;
-            if (y < 0 || y > innerWidth - 10 - 144)
-                dy = -dy;
+            if (x < 0 || x > innerWidth - 10 - 190) dx = -dx;
+            if (y < 0 || y > innerHeight - 10 - 144) dy = -dy;
             x += dx;
             y += dy;
 
@@ -34,8 +32,8 @@
             dy = 10;
             mona = document.getElementById('mona');
             timer = setInterval(move, 100) // 100msごとにmove()を呼び出し
+            document.getElementById('size').textContent = innerWidth + '×' + innerHeight;
         }
-        document.getElementById('size').textContent = innerWidth + '×' + innerHeight;
     </script>
 </head>
 <body>
