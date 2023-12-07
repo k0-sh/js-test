@@ -17,12 +17,10 @@
         // monaの画像 190x144
         let mona, x, y, dx, dy, timer;
         function move() {
-            if (x < 0 || x > innerWidth - 10 - 190) {
+            if (x < 0 || x > innerWidth - 10 - 190) 
                 dx = -dx;
-            }
-            if (y < 0 || y > innerWidth - 10 - 144) {
-                dy = -dy
-            }
+            if (y < 0 || y > innerWidth - 10 - 144)
+                dy = -dy;
             x += dx;
             y += dy;
 
@@ -48,7 +46,7 @@
 
     <h1>アニメーション2</h1>
     <p>画面サイズ</p>
-    <p id="size"></p>
+    <p><span id="size"></span></p>
     <img id="mona" src="bicycle.png" alt="mona">
 </body>
 </html>
