@@ -11,24 +11,27 @@
         <a href="../">ホーム</a> &gt;
         <a href="./">JavaScript練習</a> &gt;
     </nav>
-    <h1>ボタン配置の練習</h1>
-    <h2>文字サイズの変更</h2>
-    <script>
-        let x = 100;
-        function larger() {
-            x *= 1.2;
-            document.getElementById('resizable').style.fontSize = x + '%';
-        }
-        function smaller() {x /= 1.2; document.getElementById('resizable').style.fontSize = x + '%';}
-        function default_() {x = 100; document.getElementById('resizable').style.fontSize = x + '%';}
-    </script>
-    <div>
-        <button type="button" onclick="smaller()">小さく</button>
-        <button type="button" onclick="default_()">初期値</button>
-        <button type="button" onclick="larger()">大きく</button>
-    </div>
-
-    <p id="resizable">ほげhogeHOGE</p>
+    <article>
+        <h1>ボタン配置の練習</h1>
+        <h2>文字サイズの変更</h2>
+        <script>
+            let x = 100;
+            function larger() {
+                x *= 1.2;
+                document.getElementById('resizable').style.fontSize = x + '%';
+            }
+            function smaller() {x /= 1.2; document.getElementById('resizable').style.fontSize = x + '%';}
+            function default_() {x = 100; document.getElementById('resizable').style.fontSize = x + '%';}
+        </script>
+        <div>
+            <button type="button" onclick="smaller()">小さく</button>
+            <button type="button" onclick="default_()">初期値</button>
+            <button type="button" onclick="larger()">大きく</button>
+        </div>
+    
+        <p id="resizable">ほげhogeHOGE</p>
+    
+    </article>
 
 </body>
 </html>

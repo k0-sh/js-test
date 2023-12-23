@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>キャンバス</title>
+    <script src="lifegame.js"></script>
+    <title>ライフゲーム</title>
 </head>
 <body>
-    <canvas id="cv" width="640" height="640"></canvas>
-    <script>
-        const COLS = 40, ROW = 30;
-        const w = (canvas.width /COLS);
-        let grid = initGrid();
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+    <div style="margin: 1em 0;">
+    <form>
+        <input class="button" type="button" value="Random" id="buttonRandom">
+        <input class="button" type="button" value="Start" id="buttonStart">
+        <input class="button" type="button" value="Reset" id="buttonReset">
+    </form>
+    </div>
 
-    </script>
-</body>
+    <canvas id="cv" width="320" height="320"></canvas>
 </html>
