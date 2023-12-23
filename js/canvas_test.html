@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>キャンバス</title>
+</head>
+<body>
+    <!-- HTMLにcanvasを配置する -->
+    <canvas id="cv" width="640" height="640"></canvas>
+    <!-- Canvasを操作するJsを記述 -->
+    <script>
+        // 描画先のキャンバスを取得
+        const canvas = document.getElementById('cv');
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(30, 30, 300, 200)
+
+    </script>
+</body>
+</html>

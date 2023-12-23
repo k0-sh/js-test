@@ -10,5 +10,12 @@ p.time {
    text-align: center;
    font-size: 120%;
 }
+
+button {
+  font-weight: bold;
+  padding: 0.5em 1em;
+  background-color: #eee;
+  border-radius: 0.7em;
+}
 #breadcrumbs { font-size: 90%;}
 #breadcrumbs + h1 { margin-top: 0;}
