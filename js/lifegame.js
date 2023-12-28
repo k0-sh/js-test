@@ -15,12 +15,12 @@ let running = false;
 window.onload = function() {
     canvas = document.getElementById('cv');
     ctx = canvas.getContext('2d');
-    canvas.style.border = "2px solid";
-    canvas.style.borderColor = 'rgb(60, 60, 60)';
-    ctx.fillStyle = 'rgb(255,255,255)';
+    canvas.style.border = "2px solid";//外枠
+    canvas.style.borderColor = 'rgb(60, 60, 60)';//外枠の色
+    ctx.fillStyle = 'rgb(255,255,255)';//背景の色
     ctx.fillRect(0,0, canvas.width, canvas.height);
     ctx.lineWidth = 1;
-    cell_int = canvas.width / cellsize;
+    cell_int = canvas.width / cellsize;//セルの大きさ（正方形を想定）
     buttonRandom = document.getElementById('buttonRandom');
     buttonStart = document.getElementById('buttonStart');
     buttonReset = document.getElementById('buttonReset');
@@ -34,21 +34,19 @@ window.onload = function() {
 // 開始
 function onStart() {
     if (running) {
-        clearInterval(timer);
-        buttonStart.value = "Start";
-        running = false;
-        console.log(running);
+        clearInterval(timer);//セルの更新を停止
+        buttonStart.value = "Start";//ボタンの文字を変更
+        running = false;//スタートの状態を停止に
     } else {
-        timer = setInterval(ngenerate, 100);
+        timer = setInterval(ngenerate, 100);//100ミリ秒間隔でセルを更新
         buttonStart.value = "Stop";
         running = true;
-        console.log(running)
     }
 }
 
 // 描画
 function draw() {
-    ctx.clearRect(0, 0, 320, 320);
+    ctx.clearRect(0, 0, 320, 320);//キャンバスを一旦削除
     for (let i = 0; i < cell_int; i++) {
         for (let j = 0; j < cell_int; j++) {
             if (cells[i][j] == 1) {
@@ -104,12 +102,13 @@ function random_cells() {
     for (let i = 0; i < cell_int; i++) {
         for (let j = 0; j < cell_int; j++) {
             cells[i][j] = Math.round(Math.random());
+            //0から1の数を生成して、四捨五入で0か1に
         }
     }
     draw();
 }
 
-// 描画をリセットにして停止
+// セルの値を0にして、全部白紙に
 function init_cells() {
     for (let i = 0; i < cell_int; i++) {
         for (let j = 0; j < cell_int; j++) {
@@ -133,11 +132,12 @@ function neighbor(x, y) {
         }
     }
     return count;
+    //隣接セルの生の個数を返す
 }
 
-// セルの生成
+// セルの更新
 function ngenerate() {
-    let ces = [];
+    let ces = [];//新しいセルの状態を入れる配列
     for (let i = 0; i < cell_int; i++) {
         ces[i] =[];
         for (let j = 0; j < cell_int; j++) {
@@ -161,16 +161,18 @@ function ngenerate() {
         }
     }
     cells = ces
+    //古い状態から新しい状態へ更新
     draw()
 }
 
+/*
 function check() {
     //console.log(neighbor(15,15))
     //console.log(cell_int)
     
     timer = setInterval(ngenerate, 100);
 }
-
+*/
 
 
 
