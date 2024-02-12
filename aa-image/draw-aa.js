@@ -1,7 +1,7 @@
 /** @type {HTMLCanvasElement} */
 let canvas;
 let ctx;
-let init_aa = "　 ∧＿∧\n　（　´∀｀）\n　（　　　　）\n　｜ ｜　|\n　（_＿）＿）"
+const init_aa = "　 ∧＿∧\n　（　´∀｀）\n　（　　　　）\n　｜ ｜　|\n　（_＿）＿）"
 
 window.onload = function() {
     canvas = document.getElementById('textCanvas');
@@ -10,17 +10,6 @@ window.onload = function() {
 }
 
 
-
-function generateImage() {
-    var dataURL = canvas.toDataURL();
-    var outputImage = document.getElementById('outputImage');
-    outputImage.src = dataURL;
-}
-
-function getText() {
-    let text = document.getElementById("aa_text").value
-    drawAA(text)
-}
 
 function drawAA(text) {
     let fontSize = 16;
@@ -46,6 +35,9 @@ function drawAA(text) {
 
     ctx.beginPath();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";//背景色を白に
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "black";//文字色を黒に指定
     ctx.font = fontSize + 'px aahub_light, sans-serif';
     
     // 一行ずつ描画する
@@ -56,5 +48,12 @@ function drawAA(text) {
         if (i) addY += fontSize * lineHeight * i;
         ctx.fillText(line, x, y + addY);
     }
+}
+
+function dlImage() {
+    let link = document.createElement("a");
+    link.href = canvas.toDataURL();
+    link.download = "aa_image.png";
+    link.click()
 }
 

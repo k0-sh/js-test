@@ -16,15 +16,17 @@
     <article>
         <div>
             <label for="aa_text">入力欄</label><br>
-            <textarea name="aa_text" id="aa_text" class="aahub_light" cols="50" rows="10" onchange="getText()" placeholder="ここに画像化したいAAを貼り付けてください。"></textarea>
+            <textarea name="aa_text" id="aa_text" class="aahub_light" cols="50" rows="10" onchange="getText()" placeholder="ここに画像化したいAAを貼り付けてください"></textarea>
         </div>
         <div id="output">
             出力イメージ
         </div>
         <canvas id="textCanvas" width="200" height="200"></canvas>
-
-        <div><button onclick="generateImage()">画像生成</button></div>
-        <div><img id="outputImage" src="" alt="AA Image"></div>
+        <div><button id="download" onclick="dlImage()">画像をダウンロード</button></div>
+        <div>
+            <hr>
+            フォントはAAHub lightを使用しています
+        </div>
 
 
     </article>
