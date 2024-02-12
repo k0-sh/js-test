@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function foo() {
+        const x = document.getElementById("input").value;
+        document.getElementById("output").textContent = "こんにちは！" + x + "さん"
+        }
+        function bar() {
+            const y = document.getElementById("message").value;
+            document.getElementById("output_n").textContent = y;
+        }
+    </script>
+    <title>テキストボックスの練習</title>
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+    <h1>テキストボックス</h1>
+    <article>
+        <h3>一行だけのテキストボックス</h3>
+        <p>
+            <label>
+                お名前：<input id="input" onchange="foo()">
+            </label>
+        </p>
+        <p id="output">
+            出力欄：
+        </p>
+        <div><label for="message"><h3>改行ありの入力欄</h3></label></div>
+        <div><textarea name="message" id="message" cols="50"></textarea><br></div>
+        <button type="button" onclick="bar()">出力</button>
+        <p id="output_n">
+            出力欄：
+        </p>
+
+    </article>
+</body>
+</html>

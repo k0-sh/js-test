@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="draw-aa.js"></script>
+    <title>AAの画像化</title>
+</head>
+<body>
+    <nav id="breadcrumbs">
+        <a href="../">ホーム</a> &gt;
+        <a href="./">JavaScript練習</a> &gt;
+    </nav>
+    <h1>AAの画像化</h1>
+    <article>
+        <div>
+            <label for="aa_text">入力欄</label><br>
+            <textarea name="aa_text" id="aa_text" class="aahub_light" cols="50" rows="10" onchange="getText()" placeholder="ここに画像化したいAAを貼り付けてください。"></textarea>
+        </div>
+        <div id="output">
+            出力イメージ
+        </div>
+        <canvas id="textCanvas" width="200" height="200"></canvas>
+
+        <div><button onclick="generateImage()">画像生成</button></div>
+        <div><img id="outputImage" src="" alt="AA Image"></div>
+
+
+    </article>
+</body>
+</html>

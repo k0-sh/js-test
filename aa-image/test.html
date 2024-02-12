@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Output</title>
+</head>
+<body>
+    <textarea id="inputTextarea" rows="4" cols="50"></textarea>
+    <button onclick="convertAndOutput()">Convert and Output</button>
+    <div id="outputDiv"></div>
+
+    <script>
+        function convertAndOutput() {
+            var inputTextarea = document.getElementById('inputTextarea');
+            var outputDiv = document.getElementById('outputDiv');
+            var text = inputTextarea.value;
+
+            // 改行文字を\nから改行に置き換える
+            var formattedText = text.replace(/\n/g, '\n');
+
+            // 出力
+            outputDiv.innerText = formattedText;
+        }
+    </script>
+</body>
+</html>
