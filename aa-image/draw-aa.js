@@ -9,7 +9,10 @@ window.onload = function() {
     drawAA(init_aa)
 }
 
-
+function getText() {
+    let text = document.getElementById("aa_text").value
+    drawAA(text)
+}
 
 function drawAA(text) {
     let fontSize = 16;
