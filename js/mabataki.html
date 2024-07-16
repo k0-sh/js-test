@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <style>
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+            main {
+                background-size: contain;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+            .face_content {
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                width: 63%;
+                height: 63vh;
+                position: relative;
+            }
+            .eye {
+                background: #000;
+                width: 18%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+            }
+            .eye_l {
+                left: 0;
+            }
+            .eye_r {
+                right: 0;
+            }
+            .eye_highlight {
+                background: #fff;
+                width: 46%;
+                height: 17%;
+                position: absolute;
+                top: 11%;
+                right: 0;
+            }
+            .eye.blink {
+                animation: blink_animation 1.5s ease-in-out forwards infinite;
+            }
+
+            @keyframes blink_animation {
+                30% {
+                    height: 100%;
+                }
+                31% {
+                    height:  1%;
+                }
+                36% {
+                    height: 10%;
+                }
+                40% {
+                    height: 100%;
+                }
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title>まばたき</title>
+    </head>
+<body>
+    <main>
+        <section class="face_content">
+            <div class="eye eye_l js-eye_blink">
+                <div class="eye_highlight"></div>
+            </div>
+            <div class="eye eye_r js-eye_blink">
+                <div class="eye_highlight"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function blinkEyes() {
+            const blocks = document.querySelectorAll(".js-eye_blink");
+
+            blocks.forEach((block) =>{
+                block.classList.add("blink");
+
+                setTimeout(() => {
+                    block.classList.remove("blink")
+                }, 1500);
+            })
+        
+        const randomTime = Math.random() * (5000 - 3000) + 3000;
+        // console.log(randomTime)
+        setTimeout(blinkEyes, randomTime)
+        }
+
+        blinkEyes();
+    </script>
+</body>
+</html>
